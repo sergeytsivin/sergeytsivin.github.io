@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Знакомьтесь, Jekyll"
+date:   2015-03-22 18:43:22
+categories: tools
+---
+
+Мой журнал использует [Jekyll][jekyll] - программу для генерации сайтов на основе шаблонов, но без использования
+базы данных. Это мой первый опыт работы с Jekyll, своими впечатлениями о преимуществах и недостатках работы с Jekyll 
+буду делиться в последующих статьях.
+
+
+[jekyll]:      http://jekyllrb.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help

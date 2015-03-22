@@ -1,11 +1,13 @@
 ---
 layout: page
-title: About
+title: О журнале
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Работа программиста дает замечательную возможность знакомиться с новыми технологиями и инструментами практически 
+каждый день. Иногда это действительно новинки, чаще -- "открытие" хорошо всем известного. В любом случае, это личный опыт, 
+которым хочется поделиться. Facebook не очень подходит для развернутых статей на профессиональные темы, отсюда
+и возникла идея этого журнала.
+ 
+Обо мне: Занимаюсь разработкой веб-приложений с 2005 года, оптимизацией доступности и производительности веб-приложений — с 2011 года.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
