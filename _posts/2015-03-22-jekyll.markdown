@@ -6,10 +6,84 @@ categories: tools
 ---
 
 Мой журнал использует [Jekyll][jekyll] - программу для генерации сайтов на основе шаблонов, но без использования
-базы данных. Это мой первый опыт работы с Jekyll, своими впечатлениями о преимуществах и недостатках работы с Jekyll 
-буду делиться в последующих статьях.
+базы данных. 
+ 
+Чем привлекателен Jekyll? Вот некоторые его преимущества:
+ 
+* jekyll поддерживается [GitHub Pages][github-pages], таким образом Вы можете хостить свой сайт на Github 
+абсолютно бесплатно;
+* jekyll легко освоить, поскольку он использует привычные технологии: разметку markdown, синтаксис шаблонов похож 
+на Django и даже можно использовать CSS-препроцессор [SASS][sass];
+* сайты, сгенерированные jekyll, работают очень быстро -- ведь это просто статические страницы. 
+
+Теперь немного о грустном: jekyll написан на Ruby, сам язык знать не требуется, однако для того, чтобы проверить 
+работу сайта на локальном компьютере Вам потребуется установить на него Ruby. 
 
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Установка Jekyll на Ubuntu 12.04
+--------------------------------
+
+Ubuntu 12.04 поставляется с пакетом ruby-1.8 и ruby-1.9. На момент написания этой статьи 
+[git hub pages требовала] ([https://pages.github.com/versions/]) использования Ruby 2.1+ 
+
+Простой способ установить свежий Ruby из пакетов [описан здесь](https://www.brightbox.com/blog/2014/01/09/ruby-2-1-ubuntu-packages/):
+   
+    sudo apt-add-repository ppa:brightbox/ruby-ng
+    sudo apt-get update
+    sudo apt-get install ruby2.1 ruby2.1-dev libssl-dev zlib1g-dev build-essential
+
+Последние четыре пакета понадобятся для компиляции устанавливаемых gems.
+
+Теперь устанавливаем bundler:
+    
+    sudo gem install bundler
+
+Создадим Gemfile:
+
+    source 'https://rubygems.org'
+    gem 'github-pages'
+    gem 'therubyracer'
+
+Пакет `therubyracer`, встроенный в ruby интерпретатор javascript, необходим для запуска jekyll. Если не установить его,
+при запуске jekyll вываливается ошибка:
+
+    stsivin@tough:/www/sergeytsivin.github.io$ jekyll --version
+    /var/lib/gems/2.1.0/gems/execjs-2.4.0/lib/execjs/runtimes.rb:45:in `autodetect': Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable)
+        from /var/lib/gems/2.1.0/gems/execjs-2.4.0/lib/execjs.rb:5:in `<module:ExecJS>'
+        from /var/lib/gems/2.1.0/gems/execjs-2.4.0/lib/execjs.rb:4:in `<top (required)>'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /var/lib/gems/2.1.0/gems/coffee-script-2.3.0/lib/coffee_script.rb:1:in `<top (required)>'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /var/lib/gems/2.1.0/gems/coffee-script-2.3.0/lib/coffee-script.rb:1:in `<top (required)>'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /var/lib/gems/2.1.0/gems/jekyll-coffeescript-1.0.1/lib/jekyll-coffeescript.rb:2:in `<top (required)>'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /var/lib/gems/2.1.0/gems/jekyll-2.4.0/lib/jekyll/deprecator.rb:46:in `block in gracefully_require'
+        from /var/lib/gems/2.1.0/gems/jekyll-2.4.0/lib/jekyll/deprecator.rb:44:in `each'
+        from /var/lib/gems/2.1.0/gems/jekyll-2.4.0/lib/jekyll/deprecator.rb:44:in `gracefully_require'
+        from /var/lib/gems/2.1.0/gems/jekyll-2.4.0/lib/jekyll.rb:141:in `<top (required)>'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+        from /var/lib/gems/2.1.0/gems/jekyll-2.4.0/bin/jekyll:6:in `<top (required)>'
+        from /usr/local/bin/jekyll:23:in `load'
+        from /usr/local/bin/jekyll:23:in `<main>'
+
+
+Теперь осталось установить необходимые gems:
+
+    bundler install
+
+Если все прошло хорошо, можно запустить jekyll:
+
+    $ jekyll --version
+    jekyll 2.4.0
+
+_Продолжение следует..._
+
+[jekyll]:       http://jekyllrb.com
+[github-pages]: https://pages.github.com/
+[sass]:         http://sass-lang.com/
