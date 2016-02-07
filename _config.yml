@@ -1,7 +1,7 @@
 # Site settings
-title: Блог Сергея Цивина
+title: TSV blog
 email: sergey.tsivin+blog@gmail.com
-description: "Веб-разработка. Из личного опыта"
+description: "Random thoughts on web development and the Universe."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://sergeytsivin.github.io" # the base hostname & protocol for your site
 twitter_username: sergeytsivin
