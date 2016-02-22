@@ -25,7 +25,7 @@ categories: tools
 --------------------------------
 
 Ubuntu 12.04 поставляется с пакетом ruby-1.8 и ruby-1.9. На момент написания этой статьи 
-[git hub pages требовала] ([https://pages.github.com/versions/]) использования Ruby 2.1+ 
+[git hub pages требовала](https://pages.github.com/versions/) использования Ruby 2.1+ 
 
 Простой способ установить свежий Ruby из пакетов [описан здесь](https://www.brightbox.com/blog/2014/01/09/ruby-2-1-ubuntu-packages/):
    
