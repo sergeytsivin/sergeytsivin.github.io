@@ -5,7 +5,7 @@ reading_time:     false
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-# url: "http://sergeytsivin.github.io" # the base hostname & protocol for your site
+url: "http://sergeytsivin.github.io" # the base hostname & protocol for your site
 twitter_username: sergeytsivin
 github_username:  sergeytsivin
 
@@ -13,7 +13,7 @@ github_username:  sergeytsivin
 owner:
   name:           Sergey Tsivin
   avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  bio:            "Developing software since 1994"
   email:
   # Social networking links used in footer. Update and remove as you like.
   twitter:        sergeytsivin
